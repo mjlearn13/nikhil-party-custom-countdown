@@ -24,6 +24,7 @@ const today = new Date().toISOString().split('T')[0];
 
 // Populate Countdown / Complet UI
 function updateDOM() {
+    clearInterval(countdownActive);
     countdownActive = setInterval(() => {
         const now = new Date().getTime();
         const distance = countdownValue - now;
