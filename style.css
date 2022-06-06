@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-y: hidden;
+  display: flex;
+  align-items: center;
+  font-family: 'Amatic SC', sans-serif;
+}
+
+/* Video Background */
+.video-background {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: auto;
+}
+
+video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.video-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* Container */
+.container {
+  min-width: 580px;
+  min-height: 304px;
+  color: black;
+  margin: 0 auto;
+  padding: 25px 50px;
+  border-radius: 5px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.start-container {
+  position: relative;
+  top: 20px;
+}
+
+h1 {
+  font-size: 35px;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+h2, h3{
+  text-align: center;
+}
+
+/* Button */
+
+button {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  margin-top: 15px;
+  border: none;
+  text-transform: uppercase;
+  background: #f26e03fe;
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover {
+  filter: brightness(110%);
+}
+
+/* Countdown */
+ul {
+  margin-left: -45px;
+  text-align: center;
+}
+
+li {
+  display: inline-block;
+  font-size: 30px;
+  list-style-type: none;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+li span {
+  display: block;
+  font-size: 80px;
+  text-align: center;
+}
+
+/* Complete */
+.complete {
+  position: relative;
+  top: 60px;
+}
+
+.party {
+  animation: complete 4s infinite;
+}
+
+@keyframes complete {
+  0% {
+    color: rgb(233, 13, 13);
+  }
+
+  25% {
+    color:  rgb(229, 250, 4);
+  }
+
+  50% {
+    color: rgb(64, 238, 6);
+    transform: scale(1.5);
+  }
+
+  75% {
+    color: rgb(2, 26, 205);
+  }
+
+  100% {
+    color: rgb(182, 5, 241);
+  }
+}
+
+.animate-charcter
+{
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  font-size: 35px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.title-word {
+  animation: color-animation 4s linear infinite;
+}
+
+.title-word-1 {
+  --color-1: #DF8453;
+  --color-2: #3D8DAE;
+  --color-3: #E4A9A8;
+}
+
+.title-word-2 {
+  --color-1: #DBAD4A;
+  --color-2: #ACCFCB;
+  --color-3: #17494D;
+}
+
+.title-word-3 {
+  --color-1: #ACCFCB;
+  --color-2: #E4A9A8;
+  --color-3: #ACCFCB;
+}
+
+.title-word-4 {
+  --color-1: #3D8DAE;
+  --color-2: #DF8453;
+  --color-3: #E4A9A8;
+}
+
+@keyframes color-animation {
+  0%    {color: var(--color-1)}
+  32%   {color: var(--color-1)}
+  33%   {color: var(--color-2)}
+  65%   {color: var(--color-2)}
+  66%   {color: var(--color-3)}
+  99%   {color: var(--color-3)}
+  100%  {color: var(--color-1)}
+}
+
+/* Media Query: Large Smartphone (Vertical) */
+@media screen and (max-width: 600px) {
+  .video-background {
+    height: 100vh;
+    width: 100vh;
+  }
+  
+  video {
+    object-fit: cover;
+    object-position: 70%;
+    margin-top: -1px;
+  }
+
+  .container {
+    min-width: unset;
+    width: auto;
+    min-height: auto;
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .start-container {
+    top: unset;
+  }
+
+  .countdown {
+    position: relative;
+    top: 10px;
+  }
+
+  h1 {
+    font-size: 15px;
+  }
+
+  li {
+    font-size: 10px;
+  }
+
+  li span {
+    font-size: 30px;
+  }
+
+  button {
+    width: 100%;
+    height: 20px;
+    border-radius: 5px;
+    margin-top: 8px;
+    border: none;
+    text-transform: uppercase;
+    background: #f26e03fe;
+    color: white;
+    cursor: pointer;
+    outline: none;
+  }
+}
