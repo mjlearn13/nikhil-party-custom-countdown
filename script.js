@@ -8,7 +8,7 @@ const timeElements = document.querySelectorAll('span');
 const completeEl = document.getElementById('complete');
 const completeBtn = document.getElementById('complete-button');
 
-let countdownDate = '2022-06-24';
+let countdownDate = '2022-06-17';
 let countdownValue = Date;
 let countdownActive;
 let savedCountdown;
